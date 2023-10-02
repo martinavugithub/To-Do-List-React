@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import InputTask from './InputTask';
 import Task from './Task';
 import styles from '../styles/DailyTodo.module.css'
+
 
 function DailyTodo() {
   const [tasks, setTasks] = useState([]);
@@ -46,6 +48,7 @@ function DailyTodo() {
   
   return (
     <div className={styles.dailyTodo}>
+      <Link to="/" className={styles.homeLink}>Return to Home</Link> 
       <h2>Daily To Do</h2>
       <InputTask onAddTask={handleAddTask} editingTaskId={editingTaskId} tasks={tasks} />
             <div className="task-list">

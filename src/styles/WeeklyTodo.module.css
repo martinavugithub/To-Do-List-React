@@ -1,0 +1,39 @@
+
+.weeklyTodo {
+  text-align: center;
+}
+.homeLink {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.weeklyTodo h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.week-days {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.weekly-day {
+  flex: 1;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.weekly-day h2 {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin: 0;
+  font-size: 1.2rem;
+}
+

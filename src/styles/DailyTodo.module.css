@@ -4,3 +4,9 @@
     text-align: center;
     margin-bottom: 20px;
   }
+  .homeLink {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  

@@ -1,53 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
+import styles from '../styles/WeeklyTask.module.css';
+import { FaBolt } from 'react-icons/fa';
 
-function WeeklyTask({ task, onDelete, onEdit }) {
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedText, setEditedText] = useState(task.text);
-
-  const handleEditInputChange = (e) => {
-    setEditedText(e.target.value);
-  };
-
-  const handleSaveEdit = () => {
-    setIsEditing(false);
-    onEdit(task.id, editedText);
-  };
-
+function WeeklyTask({ task, onDelete }) {
   return (
-    <div className="weekly-task card p-3 mb-3">
-      <div className="d-flex justify-content-between">
+    <div className={`${styles.weeklyTask} ${styles.taskCard}`}>
+      <div className="d-flex flex-column align-items-center">
+        <FaBolt className={`${styles.lightningIcon}`} />
         <span className={`task-text ${task.completed ? 'completed' : ''}`}>
-          {isEditing ? (
-            <input
-              type="text"
-              value={editedText}
-              onChange={handleEditInputChange}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  handleSaveEdit();
-                }
-              }}
-            />
-          ) : (
-            task.text
-          )}
+          {task.text}
         </span>
-        <div className="d-flex">
-          {isEditing ? (
-            <button className="btn btn-primary mx-1" onClick={handleSaveEdit}>
-              Spremi
-            </button>
-          ) : (
-            <>
-              <button className="btn btn-primary mx-1" onClick={() => setIsEditing(true)}>
-                Uredi
-              </button>
-              <button className="btn btn-danger mx-1" onClick={() => onDelete(task.id)}>
-                Izbriši
-              </button>
-            </>
-          )}
-        </div>
+        <button className={`btn btn-danger mx-1 ${styles.deleteButton}`} onClick={() => onDelete(task.id)}>
+          Izbriši
+        </button>
       </div>
     </div>
   );
