@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../styles/InputTask.module.css';
 
-function InputTask({ onAddTask, editingTaskId, tasks }) {
+function InputTask({ onAddTask }) {
   const [task, setTask] = useState('');
 
   const handleInputChange = (e) => {

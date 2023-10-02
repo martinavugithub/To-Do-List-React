@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import styles from '../styles/WeeklyInputTask.module.css';
 
 function WeeklyInputTask({ onAddTask }) {
   const [task, setTask] = useState('');
@@ -16,11 +16,11 @@ function WeeklyInputTask({ onAddTask }) {
   };
 
   return (
-    <div className="inputTaskContainer">
-      <div className="input-group">
+    <div className={styles.inputTaskContainer}>
+      <div className={styles.inputFieldContainer}>
         <input
           type="text"
-          className="form-control inputField"
+          className={`form-control ${styles.inputField}`}
           placeholder="Insert task..."
           value={task}
           onChange={handleInputChange}
@@ -30,17 +30,18 @@ function WeeklyInputTask({ onAddTask }) {
             }
           }}
         />
-        <div className="input-group-append">
-          <button
-            className="btn btn-primary"
-            onClick={handleAddTask}
-          >
-            Add task
-          </button>
-        </div>
+      </div>
+      <div className={styles.addButtonContainer}>
+        <button
+          className={`btn btn-primary ${styles.addButton}`}
+          onClick={handleAddTask}
+        >
+          Add task
+        </button>
       </div>
     </div>
   );
 }
 
 export default WeeklyInputTask;
+
